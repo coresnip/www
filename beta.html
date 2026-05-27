@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Shaurya/snipsh — 17-year-old curious kid building stuff on the internet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <title>hellow! i'm snip</title>
+  <link rel="icon" type="image/x-icon" href="https://img.icons8.com/?size=100&id=dlN23b953qvQ&format=png&color=000000">
+  <style>
+    body {
+      background: rgb(235, 231, 231);
+      color: rgb(9, 9, 9);
+      font-family: 'Roboto Mono','Cascadia Code', 'Menlo', 'Consolas', monospace;
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 5% 3%;
+      max-width: 640px;
+    }
+
+    p { margin: 0; }
+    .gap { margin-top: 20px; }
+
+    a { color: #514f4f; }
+    a:hover { color: rgb(9, 11, 13); }
+
+    .email-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 6px 3px;
+      font-family: inherit;
+      font-size: 12px;
+      color: #3a3838;
+      background: rgb(220, 215, 215);
+      border: 1px solid rgb(170, 165, 165);
+      border-bottom-width: 2.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.08s, transform 0.08s, border-bottom-width 0.08s, border-top-width 0.08s;
+      position: relative;
+      top: 0;
+      outline: none;
+    }
+
+    .copy-btn:hover {
+      background: rgb(210, 205, 205);
+      color: rgb(9, 9, 9);
+    }
+
+    .copy-btn:active,
+    .copy-btn.pressed {
+      background: rgb(200, 195, 195);
+      border-bottom-width: 1px;
+      border-top-width: 1.5px;
+      transform: translateY(1.5px);
+    }
+
+    .copy-btn.copied {
+      color: #2a7a2a;
+      border-color: #a0c8a0;
+      background: #dff0df;
+    }
+
+    .posts-list {
+      margin-top: 5px;
+      margin-left: 15px;
+    }
+
+    .post-date {
+      color: #716f6f;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://media1.tenor.com/m/zdt3S5hNnHAAAAAd/pikachu-snivee.gif" height="18px" width="18px">
+  <p>namaste i'm <b>shaurya</b>.</p>
+  <p>17-year-old curious kid with a lifelong love for computers.</p>
+  <p class="">on the internet you can find me as <b>snip</b> or shsnip.</p>
+
+  <p class="gap">checkout my half-baked projects at <a href="https://github.com/shsnip" target="_blank">github</a>.</p>
+  <p>i write and share stuff on my <a href="https://twitter.com/chillshaurya" target="_blank">twitter</a> and <a href="https://realshaurya.substack.com" target="_blank">substack</a>.</p>
+
+  <div class="gap">
+    <p>recent writing:</p>
+    <div id="posts-list" class="posts-list">
+      <p class="post-date">loading...</p>
+    </div>
+  </div>
+
+  <p class="gap">you can also find me on <a href="https://discord.com/users/1019641343875760350" target="_blank">discord</a> and <a href="https://linkedin.com/in/realshaurya" target="_blank">linkedin</a>.</p>
+  <p class="email-row">
+    contact: <a href="mailto:mailshaurya@proton.me">mailshaurya@proton.me</a>
+    <button class="copy-btn" id="copyBtn" title="Copy email (press C)">
+<span id="btnIcon">⎘</span>
+      <span id="btnText">copy</span>
+    </button>
+  </p>
+
+  <script>
+    const btn = document.getElementById('copyBtn');
+    const btnText = document.getElementById('btnText');
+    const btnIcon = document.getElementById('btnIcon');
+    const EMAIL = 'mailshaurya@proton.me';
+    let resetTimer;
+
+    const pageIcon = '⎘';
+    const checkIcon = '✓';
+
+    function triggerCopy() {
+      navigator.clipboard.writeText(EMAIL).then(() => {
+        btn.classList.add('copied');
+        btnIcon.textContent = checkIcon;
+        btnText.textContent = 'done';
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+          btn.classList.remove('copied');
+          btnIcon.textContent = pageIcon;
+          btnText.textContent = 'copy';
+        }, 2000);
+      }).catch(() => {
+        // fallback for browsers that block clipboard without user gesture
+        const ta = document.createElement('textarea');
+        ta.value = EMAIL;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.classList.add('copied');
+        btnIcon.textContent = checkIcon;
+        btnText.textContent = 'done';
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+          btn.classList.remove('copied');
+          btnIcon.textContent = pageIcon;
+          btnText.textContent = 'copy';
+        }, 2000);
+      });
+    }
+
+    btn.addEventListener('click', triggerCopy);
+
+    document.addEventListener('keydown', (e) => {
+      const tag = document.activeElement.tagName;
+      if (e.key === 'c' && !e.ctrlKey && !e.metaKey && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+        btn.classList.add('pressed');
+        triggerCopy();
+        setTimeout(() => btn.classList.remove('pressed'), 150);
+      }
+    });
+
+    const postsList = document.getElementById('posts-list');
+    const SUBSTACK_FEED = 'https://api.rss2json.com/v1/api.json?rss_url=https://realshaurya.substack.com/feed';
+
+    fetch(SUBSTACK_FEED)
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch');
+        return res.json();
+      })
+      .then(data => {
+        if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+          throw new Error('No items found');
+        }
+        postsList.innerHTML = '';
+        
+        // Show up to 3 latest posts
+        const postsToShow = data.items.slice(0, 3);
+        postsToShow.forEach(item => {
+          const dateStr = item.pubDate ? item.pubDate.split(' ')[0] : '';
+          const p = document.createElement('p');
+          p.innerHTML = `<span class="post-date">${dateStr}</span> — <a href="${item.link}" target="_blank">${item.title}</a>`;
+          postsList.appendChild(p);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        postsList.innerHTML = `<p>read my notes directly on <a href="https://realshaurya.substack.com" target="_blank">substack</a>.</p>`;
+      });
+  </script>
+</body>
+</html>
