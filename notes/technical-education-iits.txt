@@ -1,0 +1,22 @@
+organization of my thoughts on the topic of competitive entrance exams slowing the growth of technical talent in india.
+anything: mailshaurya@duck.com
+
+1. someone on twitter said: "Why? because the talent cannot get into IITs? He implies they wanna get in anyways?"
+you don't need anything for anything as such, the world moves on, flowers bloom, those who are determined to do it they'll do it anyway but "if it works then it's okay" that's very deeply rooted in india and i believe that is holding us back.
+if technical talent is being supressed, which is indeed happening then we've to look for resolutions that was the reason these institutions were developed.
+college provides the envirnoment where you find like-minded people, industry connects, bunch of people you share the belonging of being from the same place. isolating technical talent from these would be an act of self sabotage as an country.
+yes they want to get in and their talent should serve as an maker for their acceptance.
+
+2. why jee?
+india as an country with what i've realised is always more the image we have of it in our mind. it amazes me everytime! there are people with pathetic living condition and lakhs of affluent households. the spectrum is huge and in some sense deeper too. the jee system was meant to be fair-est way possible to cater to this whole spectrum of families. it is not perfect nor fully fair but it is what we've arrived at after fafo. that is why i believe the comparision with US college entrances (which i personally find a better way of assesment of a person) is bleak in this context. my grandfather mentioned that just few decades back everything around him was about survival itself, we've grown a lot as a country to talk about scientific temperament.
+
+
+3. another twitter user: "why not have separate exams for certain sets of engineering branches? for instance, JEE-CS could have relevant subsets of math, physics, chemistry with some additional topics from CS, etc."
+that should be considered moving forward but the reason the current system works is it provides you with an wide range options you can have saving you from multiple exams and widening your chance of purusing something closest to your interest or where the money flows my brother. the one with more rats, the harder you've to run for it.
+
+3. the biggest point of people countering jee reforming towards more domain specific exam is that it builds your logical reasoning and critical problem solving ability. i'll buy it; just to some extent. that is a great point superficially but reality of not exam is not just problem solving. it includes mugging up and practicing things that are not nessasarily training your brain to think out new solutions, but i'll let this pass to be honest. that is the flow of nature, orignal intent (assuming it was problem solving ability) is not served always, at the end ways are meant to be made and it reduces to simple things such as business and outcomes.
+
+4. problems around "jee" not enough talked about:
+- it has its own layer of being unfairness; the simplestest example i can think of is between regular school going student and dummy school student.
+- i hate iit workshipping: they are premier technical institions of our countries; you should highly highly consider getting your education from there. that should be the only markerting pitch to the aspirants than marketing it as what not (but whatever runs the business is considered valid, opinion of a frustrated seventeen year old does not amount to anything). the worst part, it goes way far than this and then they say "why do students kill themselves" because you fucking made it the absolute icon of success and he will always feel inferior to others no matter how precious he is.
+- rot in k-12 education: incompetent teachers, copying notes from the textbook to your notebook, lack of personality development and liberty.
