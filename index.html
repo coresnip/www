@@ -57,7 +57,7 @@
                 gap: 5px;
                 padding: 2px 6px 3px;
                 font-family: inherit;
-                font-size: 12px;
+                font-size: 11.2px;
                 color: #3a3838;
                 background: rgb(220, 215, 215);
                 border: 1px solid rgb(170, 165, 165);
@@ -132,8 +132,7 @@
             and
             <a href="https://linkedin.com/in/realshaurya" target="_blank"
                 >linkedin</a
-            >
-            although i'm not really active there.
+            >.
         </p>
         <p class="email-row">
             contact:
@@ -143,12 +142,32 @@
                 <span id="btnText">copy</span>
             </button>
         </p>
+        <div class="gap" style="display: flex;">
+        <div id="time"></div> <div style="margin-left: 7px;">✦ Delhi, India</div>
+
+        </div>
 
         <!--<p>
             cal: <a href="https://cal.co/coresnip" target="_blank">coresnip</a>
         </p>-->
 
         <script>
+
+        function updateIST() {
+          timep= document.getElementById("time")
+          const options = {
+            timeZone: 'Asia/Kolkata',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+          };
+          const time = new Intl.DateTimeFormat('en-IN', options).format(new Date());
+          timep.textContent= time + " IST";
+        }
+        updateIST(); // run immediately
+        setInterval(updateIST, 1000); // then every 60 seconds
+
             const btn = document.getElementById("copyBtn");
             const btnText = document.getElementById("btnText");
             const btnIcon = document.getElementById("btnIcon");
